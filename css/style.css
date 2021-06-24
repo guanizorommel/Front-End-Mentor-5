@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/*typographies*/
+
+h1,h2,p {
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    color: hsl(234, 12%, 34%) /*very dark blue*/
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: hsl(234, 12%, 34%) /*very dark blus*/
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 200;
+    color: hsl(229, 6%, 66%); /*grayish blue*/
+}
+
+/*Layout for grand divs*/
+
+section {
+    min-width: 100vw; /*makes it 100% view width in any device*/
+    min-height: 100vh; /*makes it 100% view height in any device*/
+}
+
+.container {
+    display: flex; /*for aligning the divs to center */
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /*aligns the container centered to section based on its width, if there is no margin 0 auto the container will start at flex- start*/
+    
+    padding: 50px 20px; /*adds padding on top and bottom for 50px ans 20px left and right*/
+    max-width: 1440px;
+}
+
+.titletext {
+    font-weight: 200; /*change the font-weight*/
+}
+
+.topcontainer p {
+    margin-top: 10px; /*add gap to top*/
+}
+
+
+/*Top Container CSS that holds Hero titles*/
+
+.topcontainer {
+    text-align: center; /*aligns the text into center on this div*/
+    padding: 50px 0px; /*adds padding on top and bottom for 50px*/
+}
+
+/*Cards Container*/
+
+.bottom-container {
+    display: flex;
+    align-items: center; /*aligns the immidiate childred div to center*/
+
+    padding: 0px 20px; /*adds space to left and right just to make sure it will not touch the end*/
+}
+
+.bottom-container >* { /* selects all immidiate children div to have flex grow and flex shrink with 100% flex-basis*/
+    flex: 1 1 100%;
+}
+
+.card-content-left, 
+.card-content-middle-A,
+.card-content-middle-B,
+.card-content-right {
+    min-height: 280px; /*height of each box*/
+    padding: 30px; /*adds padding in all corners to the card box*/
+    margin: 20px;
+    box-shadow: 0 10px 30px -5px hsl(229, 6%, 66%); /*shadow for box*/
+    border-radius: 10px; 
+    border-top: solid 5px;
+
+    display: flex; /*make the content in flex to align images to right*/
+    flex-direction: column;
+}
+
+/*the card border top colors*/
+.card-content-left {
+    border-top-color: hsl(180, 62%, 55%);
+} 
+
+.card-content-middle-A {
+    border-top-color: hsl(0, 78%, 62%);
+    margin-bottom: 30px; /*Adds space betweend middle cards*/
+}
+
+.card-content-middle-B {
+    border-top-color: hsl(34, 97%, 64%);
+}   
+
+.card-content-right {
+    border-top-color: hsl(212, 86%, 64%);
+}
+
+/*card image to align to right and add space on top*/
+img {
+    align-self: flex-end;
+    padding-top: 50px;
+    max-width: 80px;
+}
+
+/*Media Query*/
+
+@media (max-width: 850px) {
+    .bottom-container {
+        flex-direction: column;
+    }
+
+    .card-content-middle-A {
+        margin-bottom: 40px; /*increased gap in mobile view to become equal*/
+    }
+
+    .card-box {
+        width: 100%;
+    }
+}
+
+
+
